@@ -190,6 +190,8 @@ public class UploadCallable implements Callable<UploadResult> {
         uploadResult.setKey(completeMultipartUploadResult.getKey());
         uploadResult.setETag(completeMultipartUploadResult.getETag());
         uploadResult.setVersionId(completeMultipartUploadResult.getVersionId());
+        uploadResult.setRequestId(completeMultipartUploadResult.getRequestId());
+        uploadResult.setExtendedRequestId(completeMultipartUploadResult.getExtendedRequestId());
         return uploadResult;
     }
 

@@ -45,6 +45,16 @@ public class UploadResult {
     private String versionId;
 
     /**
+     * The extended request Id of the new object
+     */
+    private String extendedRequestId;
+
+    /**
+     * The request Id of the new object
+     */
+    private String requestId;
+
+    /**
      * Returns the name of the bucket containing the uploaded object.
      *
      * @return The name of the bucket containing the uploaded object.
@@ -121,5 +131,40 @@ public class UploadResult {
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
+    }
+
+    /**
+     *  Get the extended request ID
+     *  @return the extended request id for the new object
+     */
+    public String getExtendedRequestId() {
+        return extendedRequestId;
+    }
+
+    /**
+     * Return the extended request ID of the new object
+     *
+     * @param extendedRequestId
+     */
+    public void setExtendedRequestId(String extendedRequestId) {
+        this.extendedRequestId = extendedRequestId;
+    }
+
+    /**
+     *  Return the request ID
+     *  @return the request ID of the new object.
+     */
+    public String getRequestId()
+    {
+        return requestId;
+    }
+
+    /**
+     *  Set the request ID
+     *  @param requestId the requestId of the new object
+     */
+    public void setRequestId(String requestId)
+    {
+        this.requestId = requestId;
     }
 }

@@ -57,6 +57,16 @@ public class CompleteMultipartUploadResult implements ServerSideEncryptionResult
     private String expirationTimeRuleId;
 
     /**
+     * The extended request Id of the new object
+     */
+    private String extendedRequestId;
+
+    /**
+     * The request Id of the new object
+     */
+    private String requestId;
+
+    /**
      * Returns the URL identifying the new multipart object.
      *
      * @return The URL identifying the new multipart object.
@@ -206,5 +216,40 @@ public class CompleteMultipartUploadResult implements ServerSideEncryptionResult
      */
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;
+    }
+
+    /**
+     *  Get the extended request ID
+     *  @return the extended request id for the new object
+     */
+    public String getExtendedRequestId() {
+        return extendedRequestId;
+    }
+
+    /**
+     * Return the extended request ID of the new object
+     *
+     * @param extendedRequestId
+     */
+    public void setExtendedRequestId(String extendedRequestId) {
+        this.extendedRequestId = extendedRequestId;
+    }
+
+    /**
+     *  Return the request ID
+     *  @return the request ID of the new object.
+     */
+    public String getRequestId()
+    {
+        return requestId;
+    }
+
+    /**
+     *  Set the request ID
+     *  @param requestId the requestId of the new object
+     */
+    public void setRequestId(String requestId)
+    {
+        this.requestId = requestId;
     }
 }

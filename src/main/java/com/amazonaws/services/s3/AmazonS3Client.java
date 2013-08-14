@@ -2200,9 +2200,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 new ObjectExpirationHeaderHandler<CompleteMultipartUploadHandler>());
         CompleteMultipartUploadHandler handler = invoke(request, responseHandler, bucketName, key);
         if (handler.getCompleteMultipartUploadResult() != null) {
-            String versionId = responseHandler.getResponseHeaders().get(Headers.S3_VERSION_ID);
-            handler.getCompleteMultipartUploadResult().setVersionId(versionId);
-            return handler.getCompleteMultipartUploadResult();
+            Map<String, String> responseHeaders = responseHandler.getResponseHeaders();
+            CompleteMultipartUploadResult result = handler.getCompleteMultipartUploadResult();
+            result.setExtendedRequestId(responseHeaders.get(Headers.EXTENDED_REQUEST_ID));
+            result.setRequestId(responseHeaders.get(Headers.REQUEST_ID));
+            result.setVersionId(responseHeaders.get(Headers.S3_VERSION_ID));
+
+            return result;
         } else {
             throw handler.getAmazonS3Exception();
         }
